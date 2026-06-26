@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Blender LAN Rendering System</title>
+</head>
+<body>
+    <div class="container">
+    	<p>Blender LAN Rendering System</p>
+		<div class="window-form">
+			<form  method="post" enctype="multipart/form-data" id="main_form">
+				<div>
+					<label for="select-version">Blender Version: </label>
+					<select name="blender_version" id="select-version">
+					</select>
+				</div>
+
+				<div>
+					<label for="input-file" id="input_file_label">📁 Open file</label>
+					<input type="file" name="blender_file" id="input-file" required>
+				</div>
+
+				Render:
+				<div>
+					<input type="radio" name="blender_render" value="render_image" id="blender_render_image" checked>
+					<label for="blender_render_image" id="blender_render_image_label"> Image </label>
+					<input type="radio" name="blender_render" value="render_animation" id="blender_render_animation">
+					<label for="blender_render_animation" id="blender_render_animation_label"> Animation </label><br><br>
+				</div>
+
+				<div>
+					<input type="submit" value="Send to Render" id="submit">
+				</div>
+			</form>
+		</div>
+		<div id="div_output_container">
+			<p>Outputs: </p>
+			<div id="div_output"></div>
+		</div>
+	</div>
+    <script src="script.js" defer></script>
+</body>
+</html>

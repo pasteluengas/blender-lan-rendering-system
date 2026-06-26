@@ -1,0 +1,119 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+html {
+	zoom: 130%;
+}
+
+body {
+	background-size: 40px 40px;
+	background-color: #3f3f3f
+	}
+
+body * {
+	font-family: "Inter", sans-serif;
+	font-optical-sizing: auto;
+	font-style: normal;
+	color: #FFFFFF;
+	font-size: 12px;
+}
+
+.container {
+	background-color: #303030;
+	width: 300px;
+	padding: 5px;
+	border-radius: 3px 3px 3px 3px;
+	
+	
+}
+
+.window-form div {
+	width: 100%;
+}
+
+.window-form {
+	background-color: #3d3d3d;
+	margin: 1px;
+	padding: 5px;
+	border-radius: 3px 3px 3px 3px;
+	border: 1px #454545 solid;
+}
+
+
+input[type="submit"], label[for="input-file"] {
+	width: 100%;
+	padding: 5px;
+	border-radius: 5px 5px 5px 5px;
+	border: 1px solid #444444;
+	color: #FFFFFF;
+	background-color: #545454;
+	text-align: center;
+}
+
+input[type="submit"]:hover,  select:hover, label[for="input-file"]:hover{
+	background-color: #656565;
+}
+
+input[type="submit"]:active, select:active, label[for="input-file"]:active {
+	background-color: #4772b3;
+}
+
+form div {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin-bottom: 10px;
+	width: 100%;
+}
+
+input[type="radio"] {
+	display: none;
+}
+
+#blender_render_animation:checked + #blender_render_animation_label {
+	background-color: #4772b3;
+}
+
+#blender_render_image:checked + #blender_render_image_label {
+	background-color: #4772b3;
+}
+
+#blender_render_image_label, #blender_render_animation_label {
+	width: 100%;
+	height: 20px;
+	background-color: #545454;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+#blender_render_image_label {
+	border-radius: 5px 0px 0px 5px;
+}
+
+#blender_render_animation_label {
+	border-radius: 0px 5px 5px 0px;
+}
+
+#blender_render_image_label:hover, #blender_render_animation_label:hover {
+	background-color: #656565;
+}
+
+select {
+	background-color: #545454;
+	border-radius: 5px 5px 5px 5px;
+	border: 1px solid #444444;
+	padding: 4px;
+}
+
+input[type="file"] {
+	display: none;
+}
+
+img {
+	width: 100%;
+}
+
+a {
+	color: #FFFFFF;
+	text-align: center;
+}

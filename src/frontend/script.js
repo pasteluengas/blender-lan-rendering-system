@@ -1,4 +1,5 @@
-let ip = "127.0.0.1"
+let ip = window.location.hostname;
+ip = `http://${ip}:8000`
 
 async function listversions() {
 	const res = await fetch(`${ip}/blender-versions`);
@@ -13,10 +14,7 @@ async function listversions() {
 	document.getElementById("select-version").innerHTML = htmloutput;
 	}
 
-function main() {
-	const URLparams = new URLSearchParams(window.location.search);
-	ip = "http://" + URLparams.get('ip') + ":8000";
-	
+function main() {	
 	listversions();
 
 	document.getElementById("input-file").addEventListener("change", (event) => {

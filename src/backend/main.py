@@ -8,24 +8,17 @@ from pathlib import Path
 import add
 
 app = FastAPI()
-app.mount("/outputs", StaticFiles(directory="output/"), name="outputs")
-app.mount("/static", StaticFiles(directory="static/"), name="static")
-
-
-origins = [
-    "http://localhost:3000",    # Common React port
-    "http://localhost:5173",    # Common Vite/Vue/Svelte port
-    "http://127.0.0.1:3000",    # Loopback IP variant
-    "http://127.0.0.1:5173",
-]
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],            # Allows specific origins
-    allow_credentials=True,
-    allow_methods=["*"],              # Allows all HTTP methods (GET, POST, etc.)
-    allow_headers=["*"],              # Allows all headers
+    allow_origins=["*"],
+    allow_credentials=False,
+    allow_methods=["*"],
+    allow_headers=["*"],
 )
+
+app.mount("/outputs", StaticFiles(directory="output/"), name="outputs")
+app.mount("/static", StaticFiles(directory="static/"), name="static")
 
 @app.get("/")
 async def read_root():
@@ -128,8 +121,4 @@ async def get_server_info():
 def read_item(item_id: int, q: str | None = None):
     return {"item_id": item_id, "q": q}
 """
-
-if __name__ == "__main__":
-    import uvicorn
-    uvicorn.run(app, host="0.0.0.0", port=8000)
     

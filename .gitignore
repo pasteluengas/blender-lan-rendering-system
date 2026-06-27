@@ -1,2 +1,4 @@
 src/backend/bin/*
 src/backend/venv
+src/venv
+src/backend/__pycache__/
